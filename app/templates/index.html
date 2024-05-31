@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decentralized Charity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Convert Cash to Crypto</h1>
+    <input type="text" id="amount" placeholder="Enter amount">
+    <button onclick="convert()">Convert</button>
+    <div id="result"></div>
+
+    <h1>Donate to Charity</h1>
+    <select id="charity">
+        {% for charity in charities %}
+            <option value="{{ charity[0] }}">{{ charity[1] }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" id="donate_amount" placeholder="Enter donation amount">
+    <input type="text" id="public_key" placeholder="Enter your public key">
+    <button onclick="donate()">Donate</button>
+    <div id="donate_result"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
